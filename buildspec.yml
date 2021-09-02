@@ -7,9 +7,6 @@ phases:
   build:
     commands:
       - npm run build
-
-artifacts:
-  files:
-    - '**/*'
-  discard-paths: no
-  base-directory: build
+  post_built:
+    commands:
+      - aws s3 sync dist/github-s3-test s3://pipeline-app-test --delete
