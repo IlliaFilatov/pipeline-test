@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
 
 phases:
   pre_build:
@@ -7,6 +7,6 @@ phases:
   build:
     commands:
       - npm run build
-  post_built:
+  post_build:
     commands:
       - aws s3 sync dist/github-s3-test s3://pipeline-app-test --delete
