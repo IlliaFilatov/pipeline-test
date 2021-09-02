@@ -2,12 +2,16 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 15
     commands:
       - echo "Installing dependencies"
       - npm install
   build:
     commands:
+      - echo "Building"
       - npm run build
   post_build:
     commands:
-      - aws s3 sync --debug build/ s3://pipeline-app-test --delete
+      - echo "Synchronizing"
+      - aws s3 sync build/ s3://pipeline-app-test --delete
