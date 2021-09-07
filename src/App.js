@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const VERSION = 1.1;
+const VERSION = 1.2;
 
 function App() {
   const [counter, setCounter] = useState(0);
